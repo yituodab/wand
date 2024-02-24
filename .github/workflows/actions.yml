@@ -1,13 +1,13 @@
 name: actions
-run-name: ${{ github.actor }} Actions
 on: [push]
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
 	- uses: actions/checkout@v4
 	- uses: actions/setup-java@v4
-  		with:
-    		distribution: 'oracle' # See 'Supported distributions' for available options
-    		java-version: '17'
+  	with:
+    	distribution: 'oracle' # See 'Supported distributions' for available options
+    	java-version: '17'
+	- run: ./gradlew
     - run: ./gradlew build
