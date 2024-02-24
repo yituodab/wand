@@ -36,4 +36,3 @@ public class netherite_block_wand extends Item {
             return InteractionResultHolder.success(player.getItemInHand(useHand));
         }
     }
-}
