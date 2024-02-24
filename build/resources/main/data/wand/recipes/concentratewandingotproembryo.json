@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "wand:wand_ingot"
+    },
+    "X": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "wand:concentratewandingotproembryo"
+  }
+}
