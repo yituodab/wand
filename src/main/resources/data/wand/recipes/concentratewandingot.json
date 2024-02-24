@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 500,
+  "experience": 1,
+  "ingredient": {
+    "item": "wand:concentratewandingotproembryo"
+  },
+  "result": "wand:concentratewandingot"
+}
