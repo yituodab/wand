@@ -31,7 +31,7 @@ public class netherite_block_wand extends Item {
                             level.setBlock(new BlockPos(e, f, g), Blocks.AIR.defaultBlockState(), 3);
                         }
                     }
-
+                }
             }
             return InteractionResultHolder.success(player.getItemInHand(useHand));
         }
