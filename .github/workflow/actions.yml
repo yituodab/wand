@@ -3,11 +3,10 @@ run-name: ${{ github.actor }} Actions
 on: [push]
 jobs:
   check-bats-version:
-    runs-on: wiodows-10
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/OpenJDK@v17
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bat
+      - run: ./gradlew
