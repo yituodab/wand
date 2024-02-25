@@ -37,6 +37,12 @@ jobs:
     - name: Chmod
       run: chmod +x ./gradlew
 
+    - name: Chmod Build
+      run: chmod 777 ./build -R
+
+    - name: Mkdir
+      run: mkdir build/libs
+
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
