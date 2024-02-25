@@ -2,7 +2,7 @@ package com.eihei.wand.registry;
 
 import com.eihei.wand.items.end_block_wand;
 import com.eihei.wand.items.minecraft_icon;
-import com.eihei.wand.items.netherite_block_wand;
+import com.eihei.wand.items.NetheriteBlockWandItem;
 import com.eihei.wand.wand;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
