@@ -31,7 +31,7 @@ public class ModItems {
     public static final RegistryObject<Item> WAND_CONCENTRATE_INGOT = ITEMS.register("concentratewandingot",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> NETHERITE_BLOCK_WAND = ITEMS.register("netherite_block_wand",
-            ()->new netherite_block_wand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new NetheriteBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> MINECRAFT_ICON = ITEMS.register("minecraft_icon",
             ()->new minecraft_icon(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
