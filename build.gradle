@@ -177,14 +177,6 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
-        maven {
-            name = "GitHubPackages"
-            url = "https://github.com/yituodab/wand"
-            credentials {
-              username = System.getenv("GITHUB_ACTOR")
-              password = System.getenv("GITHUB_TOKEN")
-      }
-    }
 }
 
 tasks.withType(JavaCompile).configureEach {
