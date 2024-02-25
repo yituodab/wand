@@ -2,6 +2,7 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'maven-publish'
 }
 
 version = '0.1'
@@ -176,6 +177,14 @@ publishing {
         maven {
             url "file://${project.projectDir}/mcmodsrepo"
         }
+    }
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/yituodab/wand"
+            credentials {
+              username = System.getenv("GITHUB_ACTOR")
+              password = System.getenv("GITHUB_TOKEN")
+      }
     }
 }
 
