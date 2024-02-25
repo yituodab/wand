@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "wand:block/shit"
+        "model": "wand:blocks/tpdoor"
       }
     }
   ]
