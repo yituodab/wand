@@ -12,4 +12,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, wand.MODID);
     public static final RegistryObject<Block> SHIT = BLOCKS.register("shit",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> TPDOOR = BLOCKS.register("tpdoor",
+            ()->new Block(BlockBehaviour.Properties.copy(Blocks.AIR)));
 }
