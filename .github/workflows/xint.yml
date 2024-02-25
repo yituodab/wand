@@ -21,3 +21,5 @@ jobs:
       run: ./gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Jar with Gradle
+      run: ./gradlew jar
