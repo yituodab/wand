@@ -46,13 +46,6 @@ jobs:
         name: wand-jar
         path: build/libs/*.jar
 
-    - name: Commit files
-      run: |
-            git config --local a111664@qq.com "github-actions[bot]@users.noreply.github.com"
-            git config --local yituodab "github-actions[bot]"
-            git add .
-            git commit -m "docs: update blog"
-
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
