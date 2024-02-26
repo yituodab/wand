@@ -48,7 +48,7 @@ jobs:
 
     - name: Commit files
       run: |
-            git config --local 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 "github-actions[bot]@users.noreply.github.com"
+            git config --local a111664@qq.com "github-actions[bot]@users.noreply.github.com"
             git config --local yituodab "github-actions[bot]"
             git add .
             git commit -m "docs: update blog"
