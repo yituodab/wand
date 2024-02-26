@@ -37,19 +37,13 @@ jobs:
     - name: Chmod
       run: chmod +x ./gradlew
 
-    - name: Chmod Build
-      run: chmod 777 ./build -R
-
-    - name: Mkdir
-      run: mkdir build/libs
-
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: jar-build
+        name: wand-jar
         path: build/libs/*.jar
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
