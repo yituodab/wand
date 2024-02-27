@@ -46,6 +46,11 @@ jobs:
             git config --local user.name "github-actions[bot]"
             git add .
             git commit -m "docs: update blog"
+    - name: push
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 1.18.2
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
