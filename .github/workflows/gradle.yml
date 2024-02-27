@@ -40,31 +40,11 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
-    - name: zip
-      run: |
-            git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git config --local user.name "github-actions[bot]"
-            git add .
-            git commit -m "docs: update blog"
-    - name: push
-      uses: ad-m/github-push-action@master
-      with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 1.18.2
-
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: wand-jar
         path: build/libs/*.jar
-    
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: zip
-        path: ./*.zip
-
-      
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
