@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: wand
+Specification-Vendor: examplemodsareus
+Specification-Version: 1
+Implementation-Title: wand
+Implementation-Version: 0.1
+Implementation-Vendor: examplemodsareus
+Implementation-Timestamp: 2024-02-27T05:12:30+0000
+
