@@ -14,5 +14,5 @@ public class ModBlocks {
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     
     public static final RegistryObject<Block> TPDOOR = BLOCKS.register("tpdoor",
-            ()->new Block(BlockBehaviour.Properties.copy(Blocks.AIR)));
+            ()->new Block(BlockBehaviour.Properties.copy(BLOCKS.AIR)));
 }
