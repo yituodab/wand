@@ -22,19 +22,9 @@ public class end_block_wand extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
         if (level.isClientSide()) {
-            return super.use(level, player, useHand);
-        }
-        ServerLevel serverLevel = level.getServer().getLevel(Level.OVERWORLD);
-        ServerPlayer serverPlayer;//= player instanceof ServerPlayer ? (ServerPlayer) player:null;
-        if (player instanceof ServerPlayer) {
-            serverPlayer = (ServerPlayer) player;
-        } else {
-            serverPlayer = null;
-        }
-        if (serverPlayer != null && serverLevel != null) {
-            HitResult hitResult = player.pick(50, 0, false);
+            HitResult hitResult = player.pick(50,0,false);
             Vec3 location = hitResult.getLocation();
-            player.teleportTo(location.x,location.y,location.z);
+            player.teleportTo(location.x, location.y, location.z);
         }
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
