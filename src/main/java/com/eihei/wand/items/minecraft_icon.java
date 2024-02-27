@@ -21,23 +21,8 @@ public class minecraft_icon extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
         if (level.isClientSide()) {
-            return super.use(level, player, useHand);
-        }
-        ServerLevel serverLevel = level.getServer().getLevel(Level.OVERWORLD);
-        ServerPlayer serverPlayer;//= player instanceof ServerPlayer ? (ServerPlayer) player:null;
-        if (player instanceof ServerPlayer) {
-            serverPlayer = (ServerPlayer) player;
-        } else {
-            serverPlayer = null;
-        }
-        if (serverPlayer != null && serverLevel != null && player.isCreative()) {
-            ((ServerPlayer) player).setGameMode(GameType.SURVIVAL);
-            return InteractionResultHolder.success(player.getItemInHand(useHand));
-        }
-        if (serverPlayer != null && serverLevel != null) {
-            player.isCreative();
-            ((ServerPlayer) player).setGameMode(GameType.CREATIVE);
-        }
+        player.setGameMode(GameType.CREATIVE);
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
+}
 }
