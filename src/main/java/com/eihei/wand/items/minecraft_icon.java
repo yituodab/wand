@@ -20,9 +20,13 @@ public class minecraft_icon extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if (level.isClientSide()) {
-        player.setGameMode(GameType.CREATIVE);
+        if (level.isClientSide()){
+            if(player.isCreative()){
+                player.setGameMode(GameType.CREATIVE);
+            }
+        }
+        else {player.setGameMode(GameType.CREATIVE);}
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
 }
-}
+
