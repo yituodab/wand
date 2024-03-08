@@ -1,11 +1,13 @@
 package com.eihei.wand.registry;
 
+import com.eihei.wand.items.StoreItem;
 import com.eihei.wand.items.end_block_wand;
 import com.eihei.wand.items.minecraft_icon;
 import com.eihei.wand.items.NetheriteBlockWandItem;
 import com.eihei.wand.wand;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -36,6 +38,9 @@ public class ModItems {
             ()->new minecraft_icon(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
             ()->new end_block_wand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+
+    public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("block_wand",
+            ()->new PickaxeItem(ModTires.WAND_PICKAXE,2, 1.5F,new Item.Properties().tab(ModCreativeTabs.WAND)));
 
 
 
