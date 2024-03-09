@@ -1,10 +1,9 @@
 package com.eihei.wand.registry;
 
-import com.eihei.wand.items.StoreItem;
-import com.eihei.wand.items.end_block_wand;
-import com.eihei.wand.items.minecraft_icon;
+import com.eihei.wand.items.EndBlockWandItem;
+import com.eihei.wand.items.MinecraftIconItem;
 import com.eihei.wand.items.NetheriteBlockWandItem;
-import com.eihei.wand.wand;
+import com.eihei.wand.WandMod;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -14,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, wand.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WandMod.MODID);
 
     public static final RegistryObject<Item> WAND_BODY = ITEMS.register("wand_body",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
@@ -35,12 +34,12 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERITE_BLOCK_WAND = ITEMS.register("netherite_block_wand",
             ()->new NetheriteBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> MINECRAFT_ICON = ITEMS.register("minecraft_icon",
-            ()->new minecraft_icon(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new MinecraftIconItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
-            ()->new end_block_wand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new EndBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
 
     public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("block_wand",
-            ()->new PickaxeItem(ModTires.WAND_PICKAXE,2, 1.5F,new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new PickaxeItem(ModTiers.WAND_PICKAXE,2, 1.5F,new Item.Properties().tab(ModCreativeTabs.WAND)));
 
 
 

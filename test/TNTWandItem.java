@@ -18,7 +18,12 @@ public class TNTWandItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
         if (level.isClientSide()) {
-            level.addFreshEntity(TntBlock., NbtIo.);
+            PrimedTnt tnt = new PrimedTnt(level, player.getX(), player.getY() + 2, player.getZ(), player);
+            tnt.setFuse(40);
+            CompoundTag tag = new CompoundTag();
+            tag.put("Motion", EntityUtil.newDoubleList(1.0, 1.0, 0.0));
+            tnt.getEntityData().set(SynchedEntityData.defineId(PrimedTnt.class, EntityDataSerializers.COMPOUND_TAG), tag);
+            level.addFreshEntity(tnt);
         }
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
