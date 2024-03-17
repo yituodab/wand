@@ -41,7 +41,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("block_wand",
             ()->new PickaxeItem(ModTiers.WAND_PICKAXE,2, 1.5F,new Item.Properties().tab(ModCreativeTabs.WAND)));
-    public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
+    public static final RegistryObject<Item> TNT_WAND = ITEMS.register("tnt_wand",
 		                ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
 
 
