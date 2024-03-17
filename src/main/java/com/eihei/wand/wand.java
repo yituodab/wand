@@ -18,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(wand.MODID)
-public class WandMod {
+public class wand {
     public static final String MODID = "wand";
     private static final Logger LOGGER = LogUtils.getLogger();
     {
