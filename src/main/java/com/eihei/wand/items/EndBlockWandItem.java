@@ -1,6 +1,5 @@
 package com.eihei.wand.items;
 
-import com.eihei.wand.WandMod;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -11,7 +10,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = WandMod.MODID)
 public class EndBlockWandItem extends Item {
     public EndBlockWandItem(Properties properties) {
         super(properties);

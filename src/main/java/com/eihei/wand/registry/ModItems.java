@@ -3,7 +3,7 @@ package com.eihei.wand.registry;
 import com.eihei.wand.items.EndBlockWandItem;
 import com.eihei.wand.items.MinecraftIconItem;
 import com.eihei.wand.items.NetheriteBlockWandItem;
-import com.eihei.wand.WandMod;
+import com.eihei.wand.wand;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WandMod.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, wand.MODID);
 
     public static final RegistryObject<Item> WAND_BODY = ITEMS.register("wand_body",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
