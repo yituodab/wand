@@ -1,10 +1,16 @@
 package com.eihei.wand.items;
 
+import com.eihei.wand.utils.EntityUtil;
+
 import net.minecraft.client.renderer.entity.TntMinecartRenderer;
 import net.minecraft.commands.arguments.NbtPathArgument;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtIo;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

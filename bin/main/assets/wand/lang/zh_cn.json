@@ -1,0 +1,13 @@
+{
+  "block.wand.shit":"屎",
+  "item.wand.wand_body":"权杖体",
+  "item.wand.wand_head":"权杖头",
+  "item.wand.wand_ingot":"权杖锭",
+  "itemGroup.wand":"权杖",
+  "item.wand.wand":"权杖",
+  "item.wand.concentratewandingotproembryo": "浓缩权杖锭原胚",
+  "item.wand.concentratewandingot": "浓缩权杖锭",
+  "item.wand.end_block_wand": "末地门权杖",
+  "item.wand.minecraft_icon": "我的世界图标",
+  "item.wand.netherite_block_wand": "下界合金块权杖"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "wand:wand_body"
+    },
+    "X": {
+      "item": "wand:wand_head"
+    }
+  },
+  "pattern": [
+    " X ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "item": "wand:wand"
+  }
+}

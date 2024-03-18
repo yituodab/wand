@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "wand:concentratewandingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "  #",
+    "###"
+  ],
+  "result": {
+    "item": "wand:wand_head"
+  }
+}
