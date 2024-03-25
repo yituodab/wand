@@ -29,8 +29,8 @@ public class RedBlockWand extends Item{
         if(level.isClientSide){
             HitResult hitResult = player.pick(100, 0, false);
             Vec3 location = hitResult.getLocation();
-            level.addParticle(ParticleTypes.FALLING_OBSIDIAN_TEAR, location.x, location.y, location.z, player.getX(), player.getY(), player.getZ());
-            level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 3);
+            level.addParticle(ParticleTypes.GLOW, location.x, location.y, location.z, player.getX(), player.getY(), player.getZ());
+            level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 0);
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
             Block block = level.getBlockState(Location).getBlock();
             if(block.getDescriptionId().equals("block.minecraft.amethyst_block")){
