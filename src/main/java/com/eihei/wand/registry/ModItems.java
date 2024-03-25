@@ -44,5 +44,5 @@ public class ModItems {
     public static final RegistryObject<Item> TNT_WAND = ITEMS.register("tnt_wand",
 		                ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> RED_BLOCK_WAND = ITEMS.register("redstore_block_wand",
-            ()->new RedBlockWand(new Item.Properties()));
+            ()->new RedBlockWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
 }
