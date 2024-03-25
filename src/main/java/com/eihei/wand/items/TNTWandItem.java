@@ -24,8 +24,7 @@ public class TNTWandItem extends Item {
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(1.0, 1.0, 0.0));
-            tnt.getEntityData().set(SynchedEntityData.defineId(PrimedTnt.class, EntityDataSerializers.COMPOUND_TAG), tag);
-            tnt.getEntityData().set(null, tag);
+            tnt.load(tag);
             level.addFreshEntity(tnt);
         }
         return InteractionResultHolder.success(player.getItemInHand(useHand));

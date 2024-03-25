@@ -1,6 +1,7 @@
 package com.eihei.wand.registry;
 
 import com.eihei.wand.items.EndBlockWandItem;
+import com.eihei.wand.items.FireWand;
 import com.eihei.wand.items.MinecraftIconItem;
 import com.eihei.wand.items.NetheriteBlockWandItem;
 import com.eihei.wand.items.RedBlockWand;
@@ -46,4 +47,6 @@ public class ModItems {
 		                ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> RED_BLOCK_WAND = ITEMS.register("redstore_block_wand",
             ()->new RedBlockWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+    public static final RegistryObject<Item> FIRE_WAND = ITEMS.register("fire_wand",
+            ()->new FireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
 }

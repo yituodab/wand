@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
@@ -29,8 +30,9 @@ public class RedBlockWand extends Item{
         if(level.isClientSide){
             HitResult hitResult = player.pick(100, 0, false);
             Vec3 location = hitResult.getLocation();
-            level.addParticle(ParticleTypes.GLOW, location.x, location.y, location.z, player.getX(), player.getY(), player.getZ());
-            level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 0);
+            level.addParticle(ParticleTypes.FALLING_LAVA, location.x, location.y, location.z, player.getX(), player.getY(), player.getZ());
+            BlockState air = Blocks.AIR.defaultBlockState();
+            level.setBlock(new BlockPos(location), air, 1);
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
             Block block = level.getBlockState(Location).getBlock();
             if(block.getDescriptionId().equals("block.minecraft.amethyst_block")){
