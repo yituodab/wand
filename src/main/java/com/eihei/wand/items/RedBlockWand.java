@@ -39,6 +39,6 @@ public class RedBlockWand extends Item{
             }
         }
         // TODO Auto-generated method stub
-        return super.use(level, player, useHand);
+        return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
 }

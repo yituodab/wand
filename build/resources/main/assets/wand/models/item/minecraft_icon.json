@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"2": "wand:block/grass"
+		"2": "wand:blocks/grass"
 	},
 	"elements": [
 		{
