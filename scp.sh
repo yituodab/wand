@@ -1,2 +1,2 @@
 #!/bin/bash
-scp build/libs/*.jar root@100.75.57.58:/mods
+sshpass -p 445202 scp build/libs/*.jar root@100.75.57.58:/mods

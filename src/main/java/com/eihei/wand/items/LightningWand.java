@@ -5,6 +5,7 @@ import org.antlr.v4.parse.ANTLRParser.labeledAlt_return;
 import net.minecraft.commands.arguments.coordinates.Vec3Argument;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
