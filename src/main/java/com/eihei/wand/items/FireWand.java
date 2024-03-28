@@ -25,14 +25,11 @@ public class FireWand extends Item{
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
         ItemStack inHand = player.getItemInHand(useHand);
-        if(level.isClientSide())
-        {
             Arrow arrow = new Arrow(level, player.getX(), player.getY(), player.getZ());
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(1.0d, 0d, 0d));
             arrow.deserializeNBT(tag);
             level.addFreshEntity(arrow);
-        }
         return super.use(level, player, useHand);
     }
 }

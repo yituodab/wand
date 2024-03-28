@@ -21,13 +21,10 @@ public class LightningWand extends Item{
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if(level.isClientSide)
-        {
             HitResult hitResult = player.pick(50,0,false);
             Vec3 location = hitResult.getLocation();
             LightningBolt Light = new LightningBolt(null, level);
             level.addFreshEntity(Light);
-        }
 
         return super.use(level, player, useHand);
     }

@@ -16,11 +16,9 @@ public class EndBlockWandItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if (level.isClientSide()) {
             HitResult hitResult = player.pick(50,0,false);
             Vec3 location = hitResult.getLocation();
             player.teleportTo(location.x, location.y, location.z);
-        }
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
 }

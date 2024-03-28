@@ -19,7 +19,6 @@ public class TNTWandItem extends Item {
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if (level.isClientSide()) {
             PrimedTnt tnt = new PrimedTnt(level, player.getX(), player.getY() + 2, player.getZ(), player);
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
@@ -27,7 +26,6 @@ public class TNTWandItem extends Item {
             tnt.load(tag);
             tnt.deserializeNBT(tag);
             level.addFreshEntity(tnt);
-        }
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
 }

@@ -27,7 +27,6 @@ public class RedBlockWand extends Item{
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if(level.isClientSide){
             HitResult hitResult = player.pick(100, 0, false);
             Vec3 location = hitResult.getLocation();
             level.addParticle(ParticleTypes.FALLING_LAVA, location.x, location.y, location.z, player.getX(), player.getY(), player.getZ());
@@ -37,7 +36,6 @@ public class RedBlockWand extends Item{
             Block block = level.getBlockState(Location).getBlock();
             if(block.getDescriptionId().equals("block.minecraft.amethyst_block")){
             }
-        }
         // TODO Auto-generated method stub
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }

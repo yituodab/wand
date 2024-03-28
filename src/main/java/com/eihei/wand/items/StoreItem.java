@@ -17,11 +17,9 @@ public class StoreItem extends Item {
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if(level.isClientSide){
             HitResult hitResult = player.pick(5, 0, false);
             Vec3 location = hitResult.getLocation();
             level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 3);
-        }
         return super.use(level, player, useHand);
     }
 }

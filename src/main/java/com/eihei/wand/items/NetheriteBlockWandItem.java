@@ -18,7 +18,6 @@ public class NetheriteBlockWandItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if (level.isClientSide()) {
             HitResult hitResult = player.pick(5, 0, false);
             Vec3 location = hitResult.getLocation();
             for (double e = location.x - 3; e < 7; e = e + 1) {
@@ -29,7 +28,5 @@ public class NetheriteBlockWandItem extends Item {
                 }
             }
             return InteractionResultHolder.success(player.getItemInHand(useHand));
-        }
-        return super.use(level, player, useHand);
     }
 }
