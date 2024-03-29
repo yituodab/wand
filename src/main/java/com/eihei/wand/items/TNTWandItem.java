@@ -1,8 +1,12 @@
 package com.eihei.wand.items;
 
+import org.apache.commons.compress.archivers.dump.DumpArchiveEntry.TYPE;
+
 import com.eihei.wand.utils.EntityUtil;
+import com.ibm.icu.impl.TZDBTimeZoneNames;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataSerializer;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.InteractionHand;
@@ -23,9 +27,7 @@ public class TNTWandItem extends Item {
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(1.0, 1.0, 0.0));
-            SynchedEntityData.defineId(tnt.getClass(), EntityDataSerializers.COMPOUND_TAG);
-            tnt.load(tag);
-            tnt.deserializeNBT(tag);
+            tnt.getEntityData().set(SynchedEntityData.defineId(PrimedTnt.class, EntityDataSerializers.COMPOUND_TAG), tag);
             level.addFreshEntity(tnt);
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
