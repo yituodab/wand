@@ -1,9 +1,17 @@
 package com.eihei.wand.items;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.TitlePaneLayout;
+
 import com.eihei.wand.wand;
 import com.eihei.wand.tool.Ways;
+import com.ibm.icu.text.CaseMap.Title;
+
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.gui.screens.TitleScreen;
+import net.minecraft.commands.arguments.ComponentArgument;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.commands.TitleCommand;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -38,16 +46,21 @@ public class CommandWand extends Item{
   @OnlyIn(Dist.CLIENT)
   public static void Commandkey(InputEvent.Key event, Player player, Level level){
     i += 1;
-    /*if(i==1)
-    if(i==2)
-    if(i==3)
-    if(i==4)*/
+    Component a = Component.keybind("Fire Block");
+    Component b = Component.keybind("TP Player");
+    Component c = Component.keybind("Fill Block");
+    Component d = Component.keybind("Fill Block(For)");
+    if(i==1)player.sendSystemMessage(b);
+    if(i==2)player.sendSystemMessage(c);
+    if(i==3)player.sendSystemMessage(d);
+    if(i==4)player.sendSystemMessage(a);
     if(i==5){
       i = 1;
     }
   }
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
+    
     Entity locationplayer = Ways.getPointedEntity(player, 50);
     if(i == 1){
     }
