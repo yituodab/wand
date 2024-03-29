@@ -23,17 +23,15 @@ public class TNTWandItem extends Item {
     public TNTWandItem(Properties properties) {
         super(properties);
     }
-    public static final EntityDataAccessor<String> TAGGET = SynchedEntityData.defineId(PrimedTnt.class, EntityDataSerializers.STRING);
-    public static final EntityDataAccessor<Boolean> TAGSET = SynchedEntityData.defineId(PrimedTnt.class, EntityDataSerializers.BOOLEAN);
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
             PrimedTnt tnt = new PrimedTnt(level, player.getX(), player.getY() + 2, player.getZ(), player);
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(1.0, 1.0, 0.0));
-            tnt.getEntityData().set(TAGGET, "tag");
-            tnt.getEntityData().set(TAGSET, false);
-            tnt.getEntityData().set(TAGGET, tag.getString("Motion"));
+            tnt.save(tag);
+            tnt.load(tag);
+            tnt.deserializeNBT(tag);
             level.addFreshEntity(tnt);
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
