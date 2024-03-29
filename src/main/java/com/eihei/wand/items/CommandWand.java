@@ -1,8 +1,9 @@
 package com.eihei.wand.items;
 
-import com.eihei.wand.listener.CommandListener;
+import com.eihei.wand.wand;
 import com.eihei.wand.tool.Ways;
-
+import net.minecraft.client.KeyMapping;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -12,25 +13,43 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(modid = wand.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommandWand extends Item{
 
   public CommandWand(Properties properties) {
     super(properties);
     //TODO Auto-generated constructor stub
   }
-  private int i;
-  public int a(){
-    return i;
+  public static int i = 1;
+  public static final KeyMapping CommandKey =
+  new KeyMapping("key", 82, Component.keybind("key").getString());
+  @SubscribeEvent
+  public static void key(RegisterKeyMappingsEvent event){
+    event.register(CommandKey);
   }
-  public void b(int i){
-    this.i = i;
+  @SubscribeEvent
+  @OnlyIn(Dist.CLIENT)
+  public static void Commandkey(InputEvent.Key event, Player player, Level level){
+    i += 1;
+    /*if(i==1)
+    if(i==2)
+    if(i==3)
+    if(i==4)*/
+    if(i==5){
+      i = 1;
+    }
   }
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     Entity locationplayer = Ways.getPointedEntity(player, 50);
     if(i == 1){
-
     }
     if(i == 2){
       if(locationplayer instanceof Player play){
