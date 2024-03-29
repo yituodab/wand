@@ -1,5 +1,6 @@
 package com.eihei.wand.items;
 
+import com.eihei.wand.listener.CommandListener;
 import com.eihei.wand.tool.Ways;
 
 import net.minecraft.world.InteractionHand;

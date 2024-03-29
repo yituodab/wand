@@ -1,5 +1,6 @@
 package com.eihei.wand.registry;
 
+import com.eihei.wand.items.CommandWand;
 import com.eihei.wand.items.EndBlockWandItem;
 import com.eihei.wand.items.FireWand;
 import com.eihei.wand.items.MinecraftIconItem;
@@ -30,7 +31,7 @@ public class ModItems {
     public static final RegistryObject<Item> WAND = ITEMS.register("wand",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> COMMAND_WAND = ITEMS.register("command_wand",
-            ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new CommandWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> WAND_CONCENTRATE_INGOT_PROEMBRYO = ITEMS.register("concentratewandingotproembryo",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> WAND_CONCENTRATE_INGOT = ITEMS.register("concentratewandingot",
