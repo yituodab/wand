@@ -35,7 +35,7 @@ public class CommandWand extends Item{
     super(properties);
     //TODO Auto-generated constructor stub
   }
-  public static int i = 1;
+  /*public static int i = 1;
   public static final KeyMapping CommandKey =
   new KeyMapping("key", 82, Component.keybind("key").getString());
   @SubscribeEvent
@@ -44,7 +44,7 @@ public class CommandWand extends Item{
   }
   @SubscribeEvent
   @OnlyIn(Dist.CLIENT)
-  public static void Commandkey(InputEvent.Key event, Player player, Level level){
+  public static void Commandkey(InputEvent.Key event){
     i += 1;
     Component a = Component.keybind("Fire Block");
     Component b = Component.keybind("TP Player");
@@ -57,24 +57,22 @@ public class CommandWand extends Item{
     if(i==5){
       i = 1;
     }
-  }
+  }*/
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     
     Entity locationplayer = Ways.getPointedEntity(player, 50);
-    if(i == 1){
+   /* if(i == 1){
     }
-    if(i == 2){
+    if(i == 2){*/
       if(locationplayer instanceof Player play){
         HitResult hitResult = player.pick(10, 0, false);
         Vec3 location = hitResult.getLocation();
         play.teleportTo(location.x, location.y, location.z);
-      }
-    }
-
+    /*  }
+    }*/
+  }
     // TODO Auto-generated method stub
     return super.use(level, player, useHand);
   }
-  
-
 }
