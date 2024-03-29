@@ -34,7 +34,7 @@ public class RedBlockWand extends Item{
             level.setBlock(new BlockPos(location), air, 1);
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
             Block block = level.getBlockState(Location).getBlock();
-            if(block.getDescriptionId().equals("block.minecraft.amethyst_block")){
+            if(block.equals(Blocks.AMETHYST_BLOCK)){
             }
         // TODO Auto-generated method stub
         return InteractionResultHolder.success(player.getItemInHand(useHand));

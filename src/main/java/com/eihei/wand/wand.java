@@ -1,5 +1,6 @@
 package com.eihei.wand;
 
+import com.eihei.wand.listener.CommandListener;
 import com.eihei.wand.registry.ModBlocks;
 import com.eihei.wand.registry.ModItems;
 import com.mojang.logging.LogUtils;

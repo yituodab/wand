@@ -23,6 +23,7 @@ public class TNTWandItem extends Item {
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(1.0, 1.0, 0.0));
+            SynchedEntityData.defineId(tnt.getClass(), EntityDataSerializers.COMPOUND_TAG);
             tnt.load(tag);
             tnt.deserializeNBT(tag);
             level.addFreshEntity(tnt);
