@@ -25,7 +25,7 @@ public class TNTWandItem extends Item {
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-            PrimedTnt tnt = new PrimedTnt(level, player.getX(), player.getY() + 2, player.getZ(), player);
+            PrimedTnt tnt = new PrimedTnt(level, player.getX(), player.getY() + 1, player.getZ(), player);
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(5.0, 1.0, 0.0));

@@ -28,6 +28,8 @@ public class FireWand extends Item{
             Arrow arrow = new Arrow(level, player.getX(), player.getY(), player.getZ());
             CompoundTag tag = new CompoundTag();
             tag.put("Motion", EntityUtil.newDoubleList(1.0d, 0d, 0d));
+            arrow.load(tag);
+            arrow.save(tag);
             arrow.deserializeNBT(tag);
             level.addFreshEntity(arrow);
         return super.use(level, player, useHand);
