@@ -31,6 +31,7 @@ public class TNTWandItem extends Item {
             tag.put("Motion", EntityUtil.newDoubleList(5.0, 1.0, 0.0));
             tnt.save(tag);
             tnt.load(tag);
+            tnt.deserializeNBT(tag);
             level.addFreshEntity(tnt);
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
