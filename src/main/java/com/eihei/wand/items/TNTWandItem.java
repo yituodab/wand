@@ -28,10 +28,9 @@ public class TNTWandItem extends Item {
             PrimedTnt tnt = new PrimedTnt(level, player.getX(), player.getY() + 2, player.getZ(), player);
             tnt.setFuse(40);
             CompoundTag tag = new CompoundTag();
-            tag.put("Motion", EntityUtil.newDoubleList(1.0, 1.0, 0.0));
+            tag.put("Motion", EntityUtil.newDoubleList(5.0, 1.0, 0.0));
             tnt.save(tag);
             tnt.load(tag);
-            tnt.deserializeNBT(tag);
             level.addFreshEntity(tnt);
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
