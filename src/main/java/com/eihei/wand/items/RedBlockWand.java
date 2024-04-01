@@ -29,7 +29,16 @@ public class RedBlockWand extends Item{
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
             HitResult hitResult = player.pick(100, 0, false);
             Vec3 location = hitResult.getLocation();
-            level.addParticle(ParticleTypes.FALLING_LAVA, location.x, location.y, location.z, player.getX(), player.getY(), player.getZ());
+            double a = Math.pow(location.x-player.getX(),2);
+            double b = Math.pow(location.y-player.getY(),2);
+            double c = Math.pow(location.z-player.getZ(), 2);
+            double d = a+b+c;
+            double Line = Math.sqrt(d);
+            Vec3 vec = new Vec3(player.getX(), player.getY(), player.getZ());
+            for(double line = 0;line<Line;line = line +1){
+                Vec3 Vec = vec.add(line, 0, 0);
+                level.addParticle(ParticleTypes.FALLING_LAVA, Vec.x, Vec.y, Vec.z, player.getX(), player.getY(), player.getZ());
+            }
             BlockState air = Blocks.AIR.defaultBlockState();
             level.setBlock(new BlockPos(location), air, 1);
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
