@@ -1,5 +1,6 @@
 package com.eihei.wand.registry;
 
+import com.eihei.wand.items.BonfireWand;
 import com.eihei.wand.items.CommandWand;
 import com.eihei.wand.items.EndBlockWandItem;
 import com.eihei.wand.items.FireWand;
@@ -45,9 +46,11 @@ public class ModItems {
     public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("block_wand",
             ()->new StoreItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> TNT_WAND = ITEMS.register("tnt_wand",
-		                ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+	    ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> RED_BLOCK_WAND = ITEMS.register("redstore_block_wand",
             ()->new RedBlockWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> FIRE_WAND = ITEMS.register("fire_wand",
             ()->new FireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+    public static final RegistryObject<Item> BONFIRE_WAND = ITEMS.register("bonfire_wand", 
+            ()->new BonfireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
 }
