@@ -38,8 +38,9 @@ public class RedBlockWand extends Item{
             double X = x/Line;
             double Y = y/Line;
             double Z = z/Line;
-            for(double line = 0;line<Line;line = line +1){
-                level.addParticle(ParticleTypes.FALLING_LAVA, Vec.x, Vec.y, Vec.z, player.getX(), player.getY(), player.getZ());
+            Vec3 jia = new Vec3(X,Y,Z);
+            for(double line = 0;line<Line;line = line +1,vec = vec += jia){
+                level.addParticle(ParticleTypes.FALLING_LAVA, vec.x, vec.y, vec.z, player.getX(), player.getY(), player.getZ());
             }
             BlockState air = Blocks.AIR.defaultBlockState();
             level.setBlock(new BlockPos(location), air, 1);
