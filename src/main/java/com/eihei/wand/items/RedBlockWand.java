@@ -51,7 +51,7 @@ public class RedBlockWand extends Item{
             Entity entity = Ways.getPointedEntity(player, Line);
             if(entity instanceof Player play){
                 float health = play.getHealth();
-                play.setHealth(health - 5);
+                play.setHealth(health - 10);
             }
             Block block = level.getBlockState(Location).getBlock();
             if(block.equals(Blocks.AMETHYST_BLOCK)){
