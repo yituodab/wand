@@ -65,9 +65,10 @@ public class CommandWand extends Item{
    /* if(i == 1){
     }
     if(i == 2){*/
-      if(locationplayer instanceof Player play){
         HitResult hitResult = player.pick(10, 0, false);
         Vec3 location = hitResult.getLocation();
+        locationplayer.teleportTo(location.x,location.y,location.z);
+        if(locationplayer instanceof Player play){
         play.teleportTo(location.x, location.y, location.z);
     /*  }
     }*/

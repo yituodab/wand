@@ -1,5 +1,7 @@
 package com.eihei.wand.items;
 
+import java.util.Random;
+
 import com.eihei.wand.tool.Ways;
 
 import net.minecraft.client.particle.Particle;
@@ -29,11 +31,15 @@ public class BonfireWand extends Item{
     BlockPos PlayerPos = new BlockPos(player.getX(),player.getY(),player.getZ());
     HitResult hitResult = player.pick(3, 0, false);
     Vec3 location = hitResult.getLocation();
-    double x = PlayerPos.getX() - 1;
-    double y = PlayerPos.getY() - 1;
-    double z = PlayerPos.getZ() - 1;
-    for(;x<3;x++)for(;y<3;y++)for(;z<3;z++)level.addParticle(ParticleTypes.FIREWORK,x,y,z,x,y,z);
-    Entity entity = Ways.getPointedEntity(player, 6);
+    Random random = new Random();
+    for(int i = 20;i<40;i++){
+      double x = random.nextDouble(location.x,player.getX());
+      double y = random.nextDouble(location.y,player.getY());
+      double z = random.nextDouble(location.z,player.getZ());
+      level.addParticle(ParticleTypes.LAVA,x,y,z,x,y,z);
+    }
+    double Line = location.distanceTo(location);
+    Entity entity = Ways.getPointedEntity(player, Line);
     if(entity instanceof Player play){
       play.setHealth(play.getHealth() - 5);
       play.hasEffect(MobEffects.FIRE_RESISTANCE);

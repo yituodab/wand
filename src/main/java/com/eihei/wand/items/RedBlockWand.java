@@ -49,10 +49,7 @@ public class RedBlockWand extends Item{
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
             level.setBlock(Location, Blocks.AIR.defaultBlockState(), 0);
             Entity entity = Ways.getPointedEntity(player, Line);
-            if(entity instanceof Player play){
-                float health = play.getHealth();
-                play.setHealth(health - 10);
-            }
+            entity.kill();
             Block block = level.getBlockState(Location).getBlock();
             if(block.equals(Blocks.AMETHYST_BLOCK)){
             }
