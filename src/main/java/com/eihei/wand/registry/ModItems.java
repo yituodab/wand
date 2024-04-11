@@ -7,6 +7,7 @@ import com.eihei.wand.items.FireWand;
 import com.eihei.wand.items.MinecraftIconItem;
 import com.eihei.wand.items.NetheriteBlockWandItem;
 import com.eihei.wand.items.RedBlockWand;
+import com.eihei.wand.items.SheepWoolWand;
 import com.eihei.wand.items.StoreItem;
 import com.eihei.wand.wand;
 import com.eihei.wand.items.TNTWandItem;
@@ -53,4 +54,6 @@ public class ModItems {
             ()->new FireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> BONFIRE_WAND = ITEMS.register("bonfire_wand", 
             ()->new BonfireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+    public static final RegistryObject<Item> WHITE_WOOL_WAND = ITEMS.register("white_wool_wand", 
+            ()->new SheepWoolWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
 }

@@ -10,6 +10,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -44,15 +45,17 @@ public class RedBlockWand extends Item{
             double Z = z/Line;
             Vec3 jia = new Vec3(X,Y,Z);
             for(double line = 0;line<Line;line = line +1,vec = vec.add(jia)){
-                level.addParticle(ParticleTypes.LAVA, vec.x, vec.y, vec.z, vec.x, vec.y, vec.z);
+                level.addParticle(ParticleTypes.FALLING_LAVA, vec.x, vec.y, vec.z, vec.x, vec.y, vec.z);
             }
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
             level.setBlock(Location, Blocks.AIR.defaultBlockState(), 0);
             Entity entity = Ways.getPointedEntity(player, Line);
-            entity.kill();
+            if(entity != null){
+            entity.hurt(DamageSource.MAGIC, 20);
             Block block = level.getBlockState(Location).getBlock();
             if(block.equals(Blocks.AMETHYST_BLOCK)){
             }
+        }
         // TODO Auto-generated method stub
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }

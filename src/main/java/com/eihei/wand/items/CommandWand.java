@@ -2,6 +2,8 @@ package com.eihei.wand.items;
 
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.TitlePaneLayout;
 
+import org.apache.commons.lang3.ObjectUtils.Null;
+
 import com.eihei.wand.wand;
 import com.eihei.wand.tool.Ways;
 import com.ibm.icu.text.CaseMap.Title;
@@ -62,17 +64,20 @@ public class CommandWand extends Item{
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     
     Entity locationplayer = Ways.getPointedEntity(player, 50);
+
    /* if(i == 1){
     }
     if(i == 2){*/
         HitResult hitResult = player.pick(10, 0, false);
         Vec3 location = hitResult.getLocation();
+        if(locationplayer != null){
         locationplayer.teleportTo(location.x,location.y,location.z);
         if(locationplayer instanceof Player play){
         play.teleportTo(location.x, location.y, location.z);
     /*  }
     }*/
   }
+}
     // TODO Auto-generated method stub
     return super.use(level, player, useHand);
   }
