@@ -2,6 +2,7 @@ package com.eihei.wand.items;
 
 import com.eihei.wand.tool.Ways;
 
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -29,17 +30,33 @@ public class BonfireWand extends Item{
     double X = (location.x-player.getX());
     double Y = (location.y-player.getY());
     double Z = (location.z-player.getZ());
-    for(int i = 0;i<20;i++){
+    /*for(int i = 0;i<20;i++){
       double rand = Math.random();
       double lx = X * rand;
       double ly = Y * rand;
       double lz = Z * rand;
-      double x = PlayerPos.x + lx;
+      double x = Pl
       double y = PlayerPos.y + ly;
       double z = PlayerPos.z + lz;
       level.addParticle(ParticleTypes.LAVA,x,y,z,x,y,z);
+    }*/
+    double Line = PlayerPos.distanceTo(location);
+    double lx = X/Line;
+    double ly = Y/Line;
+    double lz = Z/Line;
+    Vec3 add = new Vec3(lx, ly, lz);
+    for(double i = 0.5;i<Line;i=i+0.5,PlayerPos=PlayerPos.add(add)){
+      double x = PlayerPos.x;
+      double y = PlayerPos.y;
+      double z = PlayerPos.z;
+      level.addParticle (ParticleTypes.LAVA, x, y, z, x, y, z);
+      level.addParticle (ParticleTypes.LAVA, x, y+1, z, x, y+1, z);
+      level.addParticle (ParticleTypes.LAVA, x, y-1, z, x, y-1, z);
+      level.addParticle (ParticleTypes.LAVA, x+1, y, z, x+1, y, z);
+      level.addParticle (ParticleTypes.LAVA, x-1, y, z, x-1, y, z);
+      level.addParticle (ParticleTypes.LAVA, x, y, z+1, x, y, z+1);
+      level.addParticle (ParticleTypes.LAVA, x, y, z-1, x, y, z-1);
     }
-    double Line = location.distanceTo(location);
     Entity entity = Ways.getPointedEntity(player, Line);
     if(entity != null){
       entity.hurt(DamageSource.ON_FIRE, 5);
