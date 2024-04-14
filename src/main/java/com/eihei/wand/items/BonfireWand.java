@@ -30,22 +30,13 @@ public class BonfireWand extends Item{
     double X = (location.x-player.getX());
     double Y = (location.y-player.getY());
     double Z = (location.z-player.getZ());
-    /*for(int i = 0;i<20;i++){
-      double rand = Math.random();
-      double lx = X * rand;
-      double ly = Y * rand;
-      double lz = Z * rand;
-      double x = Pl
-      double y = PlayerPos.y + ly;
-      double z = PlayerPos.z + lz;
-      level.addParticle(ParticleTypes.LAVA,x,y,z,x,y,z);
-    }*/
     double Line = PlayerPos.distanceTo(location);
-    double lx = X/Line;
-    double ly = Y/Line;
-    double lz = Z/Line;
+    double lx = (X/Line)/2;
+    double ly = (Y/Line)/2;
+    double lz = (Z/Line)/2;
     Vec3 add = new Vec3(lx, ly, lz);
-    for(double i = 0.5;i<Line;i=i+0.5,PlayerPos=PlayerPos.add(add)){
+    for(int a=0;a<2;a++){
+    for(double i = 0;i<Line;i=i+0.5,PlayerPos=PlayerPos.add(add)){
       double x = PlayerPos.x;
       double y = PlayerPos.y;
       double z = PlayerPos.z;
@@ -56,18 +47,33 @@ public class BonfireWand extends Item{
       level.addParticle (ParticleTypes.LAVA, x-1, y, z, x-1, y, z);
       level.addParticle (ParticleTypes.LAVA, x, y, z+1, x, y, z+1);
       level.addParticle (ParticleTypes.LAVA, x, y, z-1, x, y, z-1);
+      if(i>=2){
+        level.addParticle (ParticleTypes.LAVA, x+2, y, z, x+2, y, z);
+        level.addParticle (ParticleTypes.LAVA, x-2, y, z, x-2, y, z);
+        level.addParticle (ParticleTypes.LAVA, x, y+2, z, x, y+2, z);
+        level.addParticle (ParticleTypes.LAVA, x, y-2, z, x, y-2, z);
+        level.addParticle (ParticleTypes.LAVA, x, y, z+2, x, y, z+2);
+        level.addParticle (ParticleTypes.LAVA, x, y, z-2, x, y, z-2);
+      }
+      if(i>=3){
+        level.addParticle (ParticleTypes.LAVA, x+3, y, z, x+3, y, z);
+        level.addParticle (ParticleTypes.LAVA, x-3, y, z, x-3, y, z);
+        level.addParticle (ParticleTypes.LAVA, x, y+3, z, x, y+3, z);
+        level.addParticle (ParticleTypes.LAVA, x, y-3, z, x, y-3, z);
+        level.addParticle (ParticleTypes.LAVA, x, y, z+3, x, y, z-3);
+        level.addParticle (ParticleTypes.LAVA, x, y, z-3, x, y, z-3);
+      }
+    }
     }
     Entity entity = Ways.getPointedEntity(player, Line);
     if(entity != null){
       entity.hurt(DamageSource.ON_FIRE, 5);
       entity.isOnFire();
       if(entity instanceof Player play){
-      play.setHealth(play.getHealth() - 5);
       play.hasEffect(MobEffects.FIRE_RESISTANCE);
     }
   }
     // TODO Auto-generated method stub
-    return super.use(level, player, useHand);
+    return InteractionResultHolder.success(player.getItemInHand(useHand));
   }
-
 }

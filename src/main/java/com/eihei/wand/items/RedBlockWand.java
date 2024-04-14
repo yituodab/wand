@@ -38,8 +38,7 @@ public class RedBlockWand extends Item{
             double y = location.y-player.getY();
             double z = location.z-player.getZ();
             Vec3 vec = new Vec3(player.getX(), player.getY()+1, player.getZ());
-            Vec3 Vec = new Vec3(x,y,z);
-            double Line = vec.distanceTo(Vec);
+            double Line = vec.distanceTo(location);
             double X = x/Line;
             double Y = y/Line;
             double Z = z/Line;
@@ -52,10 +51,10 @@ public class RedBlockWand extends Item{
             Entity entity = Ways.getPointedEntity(player, Line);
             if(entity != null){
             entity.hurt(DamageSource.MAGIC, 20);
+        	}
             Block block = level.getBlockState(Location).getBlock();
             if(block.equals(Blocks.AMETHYST_BLOCK)){
-            }
-        }
+        	}
         // TODO Auto-generated method stub
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
