@@ -11,15 +11,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class StoneWand extends Item {
-    public StoneWand(Properties p_41383_) {
+public class StoneCutterWand extends Item {
+    public StoneCutterWand(Properties p_41383_) {
         super(p_41383_);
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
             HitResult hitResult = player.pick(5, 0, false);
             Vec3 location = hitResult.getLocation();
-            level.setBlock(new BlockPos(location), Blocks.STONE.defaultBlockState(), 0);
+            level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 0);
         return super.use(level, player, useHand);
     }
 }
