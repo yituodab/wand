@@ -8,7 +8,7 @@ import com.eihei.wand.items.MinecraftIconItem;
 import com.eihei.wand.items.NetheriteBlockWandItem;
 import com.eihei.wand.items.RedBlockWand;
 import com.eihei.wand.items.SheepWoolWand;
-import com.eihei.wand.items.StoreItem;
+import com.eihei.wand.items.StoneCutterWand;
 import com.eihei.wand.wand;
 import com.eihei.wand.items.TNTWandItem;
 import net.minecraft.world.item.BlockItem;
@@ -45,7 +45,7 @@ public class ModItems {
     public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
             ()->new EndBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("block_wand",
-            ()->new StoreItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new StoneCutterWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> TNT_WAND = ITEMS.register("tnt_wand",
 	    ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> RED_BLOCK_WAND = ITEMS.register("redstore_block_wand",
