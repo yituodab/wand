@@ -11,9 +11,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class StoreItem extends Item {
-    public StoreItem(Properties p_41383_) {
-        super(p_41383_);
+public class StoneCutterWand extends Item {
+    public StoneCutterWand(Properties properties) {
+        super(properties);
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
