@@ -3,7 +3,7 @@
   "cookingtime": 500,
   "experience": 1,
   "ingredient": {
-    "item": "wand:concentratewandingotproembryo"
+    "item": "wand:concentrateobsidianingotproembryo"
   },
-  "result": "wand:concentratewandingot"
+  "result": "wand:concentrateobsidianingot"
 }

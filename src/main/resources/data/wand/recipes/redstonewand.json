@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": {
+    "#": {
+      "item": "wand:concentrateobsidianingot"
+    }
+  },
+  "result": {
+    "item": "wand:redstone_block_wand"
+  }
+}

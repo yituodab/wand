@@ -30,15 +30,15 @@ public class ModItems {
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> SHIT = ITEMS.register("shit",
             ()->new BlockItem(ModBlocks.SHIT.get(), new Item.Properties()));
-    public static final RegistryObject<Item> WAND_INGOT = ITEMS.register("wand_ingot",
+    public static final RegistryObject<Item> OBSIDIAN_INGOT = ITEMS.register("obsidian_ingot",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> WAND = ITEMS.register("wand",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> COMMAND_WAND = ITEMS.register("command_wand",
             ()->new CommandWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
-    public static final RegistryObject<Item> WAND_CONCENTRATE_INGOT_PROEMBRYO = ITEMS.register("concentratewandingotproembryo",
+    public static final RegistryObject<Item> OBSIDIAN_CONCENTRATE_INGOT_PROEMBRYO = ITEMS.register("concentrateobsidianingotproembryo",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
-    public static final RegistryObject<Item> WAND_CONCENTRATE_INGOT = ITEMS.register("concentratewandingot",
+    public static final RegistryObject<Item> OBSIDIAN_CONCENTRATE_INGOT = ITEMS.register("concentrateobsidianingot",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> NETHERITE_BLOCK_WAND = ITEMS.register("netherite_block_wand",
             ()->new NetheriteBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
