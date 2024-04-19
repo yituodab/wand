@@ -1,7 +1,6 @@
 package com.eihei.wand.items;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -19,18 +18,19 @@ public class NetheriteBlockWandItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        if (!level.isClientSide()) {
             HitResult hitResult = player.pick(5, 0, false);
             Vec3 location = hitResult.getLocation();
-            for (double e = location.x - 3; e < 7; e = e + 1) {
-                for (double f = location.y - 3; f < 7; f = f + 1) {
-                    for (double g = location.z - 3; g < 7; g = g + 1) {
-                        level.setBlock(new BlockPos(e, f, g), Blocks.AIR.defaultBlockState(), 3);
+            double X = location.x + 3.5;
+            double Y = location.y + 3.5;
+            double Z = location.z + 3.5;
+            for (double x = location.x - 3.5; x < X; x++) {
+                for (double y = location.y - 3.5; y < Y; y++) {
+                    for (double z = location.z - 3.5; z < Z; z++) {
+                        BlockPos blockPos = new BlockPos(x,y,z);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 0);
                     }
                 }
             }
             return InteractionResultHolder.success(player.getItemInHand(useHand));
-        }
-        return super.use(level, player, useHand);
     }
 }

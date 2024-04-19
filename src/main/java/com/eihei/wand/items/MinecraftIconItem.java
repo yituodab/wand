@@ -1,6 +1,5 @@
 package com.eihei.wand.items;
 
-import com.eihei.wand.wand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -12,9 +11,8 @@ import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = wand.MODID)
-public class minecraft_icon extends Item {
-    public minecraft_icon(Properties properties) {
+public class MinecraftIconItem extends Item {
+    public MinecraftIconItem(Properties properties) {
         super(properties);
     }
 

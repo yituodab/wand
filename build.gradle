@@ -69,7 +69,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-                examplemod {
+                wand {
                     source sourceSets.main
                 }
             }
