@@ -2,14 +2,16 @@
   "block.wand.shit":"屎",
   "item.wand.wand_body":"权杖体",
   "item.wand.wand_head":"权杖头",
-  "item.wand.wand_ingot":"黑曜石锭",
+  "item.wand.obsidian_ingot":"黑曜石锭",
   "itemGroup.wand":"权杖",
   "item.wand.wand":"权杖",
-  "item.wand.concentrateobsidianingot": "浓缩黑曜石锭原胚",
+  "item.wand.concentrateobsidianingotproembryo": "浓缩黑曜石锭原胚",
   "item.wand.concentrateobsidianingot": "浓缩黑曜石锭",
   "item.wand.end_block_wand": "末地门权杖",
   "item.wand.minecraft_icon": "我的世界图标",
   "item.wand.netherite_block_wand": "下界合金块权杖",
   "item.wand.redstone_block_wand": "红石块权杖",
-  "item.wand.bonfire_wand": "篝火权杖"
+  "item.wand.bonfire_wand": "篝火权杖",
+  "item.wand.command_wand": "命令方块权杖",
+  "item.wand.stone_cutter_wand": "切石机权杖"
 }
