@@ -64,5 +64,5 @@ public class ModItems {
     public static final RegistryObject<Item> STONE_WAND = ITEMS.register("stone_wand", 
     	    ()->new StoneWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> COBWEB_WAND = ITEMS.register("cobweb_wand",
-            ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND))) :
+            ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
 }
