@@ -12,6 +12,8 @@ import com.eihei.wand.items.StoneCutterWand;
 import com.eihei.wand.items.StoneWand;
 import com.eihei.wand.wand;
 import com.eihei.wand.items.TNTWandItem;
+import com.eihei.wand.items.WandItem;
+
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -33,7 +35,7 @@ public class ModItems {
     public static final RegistryObject<Item> OBSIDIAN_INGOT = ITEMS.register("obsidian_ingot",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> WAND = ITEMS.register("wand",
-            ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new WandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> COMMAND_WAND = ITEMS.register("command_wand",
             ()->new CommandWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> OBSIDIAN_CONCENTRATE_INGOT_PROEMBRYO = ITEMS.register("concentrateobsidianingotproembryo",

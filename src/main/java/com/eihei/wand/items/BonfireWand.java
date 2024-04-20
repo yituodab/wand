@@ -74,6 +74,6 @@ public class BonfireWand extends Item{
     }
   }
     // TODO Auto-generated method stub
-    return InteractionResultHolder.success(player.getItemInHand(useHand));
+    return super.use(level, player, useHand);
   }
 }

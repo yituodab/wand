@@ -1,5 +1,6 @@
 package com.eihei.wand.items;
 
+import com.eihei.wand.tool.Pos;
 import com.eihei.wand.tool.Ways;
 
 import net.minecraft.client.particle.Particle;
@@ -37,13 +38,13 @@ public class RedBlockWand extends Item{
             double x = location.x-player.getX();
             double y = location.y-player.getY();
             double z = location.z-player.getZ();
-            Vec3 vec = new Vec3(player.getX(), player.getY()+1, player.getZ());
+            Vec3 vec = Pos.main(1, player);
             double Line = vec.distanceTo(location);
-            double X = x/Line;
-            double Y = y/Line;
-            double Z = z/Line;
-            Vec3 jia = new Vec3(X,Y,Z);
-            for(double line = 0;line<Line;line = line +1,vec = vec.add(jia)){
+            double X = x/Line/4;
+            double Y = y/Line/4;
+            double Z = z/Line/4;
+            Vec3 add = new Vec3(X,Y,Z);
+            for(double line = 0;line<Line;line = line + 0.25,vec = vec.add(add)){
                 level.addParticle(ParticleTypes.FALLING_LAVA, vec.x, vec.y, vec.z, vec.x, vec.y, vec.z);
             }
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
@@ -56,6 +57,6 @@ public class RedBlockWand extends Item{
             if(block.equals(Blocks.AMETHYST_BLOCK)){
         	}
         // TODO Auto-generated method stub
-        return InteractionResultHolder.success(player.getItemInHand(useHand));
+        return super.use(level,player,useHand);
     }
 }

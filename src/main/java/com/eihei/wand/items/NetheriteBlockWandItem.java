@@ -1,6 +1,8 @@
 package com.eihei.wand.items;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -30,6 +32,16 @@ public class NetheriteBlockWandItem extends Item {
                         level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 0);
                     }
                 }
+            }
+            for(int i=0;i<20;i++){
+                for(double distance=0;distance<3.5;distance=distance+0.5){
+                	for(int n = 0;n<360;n=n+5){
+                		double degree = Math.toRadians(n);
+                		double x = location.x+Math.cos(degree)*distance;
+                		double z = location.z+Math.sin(degree)*distance;
+                		level.addParticle((ParticleOptions)ParticleTypes.DUST, x, location.y, z, x, location.y, z);
+                	}
+            	}
             }
             return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
