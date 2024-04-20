@@ -30,6 +30,7 @@ public class CobwebWand extends Item{
     Vec3 PlayerPos = new Vec3(player.getX(), player.getY(), player.getZ());
     if(block == null){
       block = location;
+      return super
     }
     if(block != null){
       double line = PlayerPos.distanceTo(block); 
