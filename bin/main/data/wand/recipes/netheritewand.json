@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": {
+    "#": {
+      "item": "wand:wand"
+    },
+    "X": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "result": {
+    "item": "wand:redstone_block_wand"
+  }
+}
