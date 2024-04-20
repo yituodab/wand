@@ -15,9 +15,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class StoneWand extends Item{
+public class CobwebWand extends Item{
 
-  public StoneWand(Properties properties) {
+  public StoneW(Properties properties) {
     super(properties);
     //TODO Auto-generated constructor stub
   }

@@ -1,6 +1,7 @@
 package com.eihei.wand.registry;
 
 import com.eihei.wand.items.BonfireWand;
+import com.eihei.wand.items.CobwebWand;
 import com.eihei.wand.items.CommandWand;
 import com.eihei.wand.items.EndBlockWandItem;
 import com.eihei.wand.items.FireWand;
@@ -62,4 +63,6 @@ public class ModItems {
             ()->new SheepWoolWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> STONE_WAND = ITEMS.register("stone_wand", 
     	    ()->new StoneWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+    public static final RegistryObject<Item> COBWEB_WAND = ITEMS.register("cobweb_wand",
+            ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND))) :
 }
