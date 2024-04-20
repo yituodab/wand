@@ -6,7 +6,7 @@
 		"2": "minecraft:block/dispenser_front",
 		"3": "minecraft:block/furnace_side",
 		"4": "minecraft:block/furnace_top",
-		"particle": "block/furnace_side"
+		"particle": "minecraft:block/furnace_side"
 	},
 	"elements": [
 		{
