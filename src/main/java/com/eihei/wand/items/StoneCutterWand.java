@@ -20,6 +20,6 @@ public class StoneCutterWand extends Item {
             HitResult hitResult = player.pick(5, 0, false);
             Vec3 location = hitResult.getLocation();
             level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 0);
-        return super.use(level, player, useHand);
+            return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
 }
