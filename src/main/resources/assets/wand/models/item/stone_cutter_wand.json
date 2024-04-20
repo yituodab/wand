@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "wand:items/texture",
 		"2": "minecraft:block/stonecutter_saw",
-		"3": "minecraft:block/stonecutter_side",
+		"3": "wand:blocks/stonecutter_side",
 		"4": "minecraft:block/stonecutter_top",
 		"particle": "minecraft:block/stonecutter_saw"
 	},
