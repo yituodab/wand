@@ -28,11 +28,11 @@ public class CobwebWand extends Item{
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     Vec3 location = Pos.main(50, player);
     Vec3 PlayerPos = new Vec3(player.getX(), player.getY(), player.getZ());
-    double line = PlayerPos.distanceTo(block);
     if(block == null){
       block = location;
     }
     if(block != null){
+      double line = PlayerPos.distanceTo(block); 
       block = null;
       double x = (location.x - player.getX())/line;
       double z = (location.z - player.getZ())/line;
