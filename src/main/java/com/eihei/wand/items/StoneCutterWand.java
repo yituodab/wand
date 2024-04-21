@@ -22,4 +22,5 @@ public class StoneCutterWand extends Item {
             level.setBlock(new BlockPos(location), Blocks.AIR.defaultBlockState(), 0);
             return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
+    public static final int MAX_STACK_SIZE = 1;
 }

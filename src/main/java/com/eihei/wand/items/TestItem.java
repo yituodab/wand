@@ -28,7 +28,8 @@ public class TestItem extends Item{
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     	Vec3 location = Pos.main(10, player);
       for(int i=1;i<5;i++){
-        for(int n=0;n<360;n++){
+        for(int j=0;j<360;j++){
+          double n = Math.toRadians(j);
 					double x = location.x + Math.cos(n)*i;
           double z = location.z + Math.sin(n)*i;
           level.addParticle(ParticleTypes.LAVA,x,location.y,z,x,location.y,z);
@@ -36,5 +37,5 @@ public class TestItem extends Item{
       }
 		return InteractionResultHolder.success(player.getItemInHand(useHand));
   }
-
+  public static final int MAX_STACK_SIZE = 1;
 }

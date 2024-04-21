@@ -36,5 +36,5 @@ public class EnchantmentBlockWand extends Item {
     // TODO Auto-generated method stub
     return InteractionResultHolder.success(player.getItemInHand(useHand));
   }
-
+  public static final int MAX_STACK_SIZE = 1;
 }

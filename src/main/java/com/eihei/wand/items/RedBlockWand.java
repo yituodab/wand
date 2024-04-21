@@ -45,7 +45,7 @@ public class RedBlockWand extends Item{
             double Z = z/Line/4;
             Vec3 add = new Vec3(X,Y,Z);
             for(double line = 0;line<Line;line = line + 0.25,vec = vec.add(add)){
-                level.addParticle(ParticleTypes.FALLING_LAVA, vec.x, vec.y, vec.z, vec.x, vec.y, vec.z);
+                level.addParticle(ParticleTypes.GLOW, vec.x, vec.y, vec.z, vec.x, vec.y, vec.z);
             }
             BlockPos Location = new BlockPos(location.x, location.y, location.z);
             level.setBlock(Location, Blocks.AIR.defaultBlockState(), 0);
@@ -59,4 +59,5 @@ public class RedBlockWand extends Item{
         // TODO Auto-generated method stub
         return super.use(level,player,useHand);
     }
+    public static final int MAX_STACK_SIZE = 1;
 }

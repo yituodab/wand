@@ -76,4 +76,5 @@ public class BonfireWand extends Item{
     // TODO Auto-generated method stub
     return super.use(level, player, useHand);
   }
+  public static final int MAX_STACK_SIZE = 1;
 }

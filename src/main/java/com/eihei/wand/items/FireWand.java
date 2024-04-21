@@ -65,4 +65,5 @@ public class FireWand extends Item{
         }
         return super.use(level, player, useHand);
     }
+    public static final int MAX_STACK_SIZE = 1;
 }

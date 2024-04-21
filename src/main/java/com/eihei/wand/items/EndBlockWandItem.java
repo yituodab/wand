@@ -24,4 +24,5 @@ public class EndBlockWandItem extends Item {
             player.teleportTo(location.x, location.y, location.z);
         return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
+    public static final int MAX_STACK_SIZE = 1;
 }

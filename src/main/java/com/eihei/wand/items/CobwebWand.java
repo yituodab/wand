@@ -45,5 +45,6 @@ public class CobwebWand extends Item{
     }
     return InteractionResultHolder.success(player.getItemInHand(useHand));
   }
+  public static final int MAX_STACK_SIZE = 1;
 
 }

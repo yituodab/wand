@@ -36,5 +36,5 @@ public class LightningWand extends Item{
 
 
 
-    
+    public static final int MAX_STACK_SIZE = 1;
 }
