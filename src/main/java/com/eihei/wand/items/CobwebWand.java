@@ -30,7 +30,7 @@ public class CobwebWand extends Item{
     Vec3 PlayerPos = new Vec3(player.getX(), player.getY(), player.getZ());
     if(block == null){
       block = location;
-      return super
+      return InteractionResultHolder.success(player.getItemInHand(useHand));
     }
     if(block != null){
       double line = PlayerPos.distanceTo(block); 
@@ -38,11 +38,12 @@ public class CobwebWand extends Item{
       double x = (location.x - player.getX())/line;
       double z = (location.z - player.getZ())/line;
       Vec3 add = new Vec3(x,0,z);
-      for(int i=0;i<50;i++,PlayerPos=PlayerPos.add(add)){
+      for(int i=0;i<line*2;i++,PlayerPos=PlayerPos.add(add)){
         player.moveTo(PlayerPos);
+        for(int n=0;n<500;n++){}
       }
     }
-    return super.use(level, player, useHand);
+    return InteractionResultHolder.success(player.getItemInHand(useHand));
   }
 
 }

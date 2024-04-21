@@ -13,5 +13,8 @@
   "item.wand.redstone_block_wand": "红石块权杖",
   "item.wand.bonfire_wand": "篝火权杖",
   "item.wand.command_wand": "命令方块权杖",
-  "item.wand.stone_cutter_wand": "切石机权杖"
+  "item.wand.stone_cutter_wand": "切石机权杖",
+  "item.wand.fire_wand": "发射器权杖",
+  "item.wand.tnt_wand": "TNT权杖",
+  "item.wand.cobweb_wand": "蜘蛛网权杖"
 }
