@@ -13,9 +13,11 @@ import com.eihei.wand.items.StoneCutterWand;
 import com.eihei.wand.items.StoneWand;
 import com.eihei.wand.wand;
 import com.eihei.wand.items.TNTWandItem;
+import com.eihei.wand.items.TestItem;
 import com.eihei.wand.items.WandItem;
 
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.level.block.StoneButtonBlock;
@@ -65,4 +67,6 @@ public class ModItems {
     	    ()->new StoneWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> COBWEB_WAND = ITEMS.register("cobweb_wand",
             ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+    public static final RegistryObject<Item> TESTITEM = ITEMS.register("test_item", 
+   	    ()->new TestItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }
