@@ -1,5 +1,7 @@
 package com.eihei.wand.items;
 
+import java.util.Random;
+
 import com.eihei.wand.tool.Ways;
 
 import net.minecraft.server.commands.EnchantCommand;
@@ -26,8 +28,8 @@ public class EnchantmentBlockWand extends Item {
     if(locationplayer != null && locationplayer instanceof Player play)
     {
       ItemStack onhand = play.getItemInHand(InteractionHand.MAIN_HAND);
-      int i = (int)Math.random()*39;
-      int n = (int)Math.random()*5;
+      int i = new Random().nextInt(40);
+      int n = new Random().nextInt(6);
       if (i==1)onhand.enchant(Enchantments.ALL_DAMAGE_PROTECTION, n);
     }
     

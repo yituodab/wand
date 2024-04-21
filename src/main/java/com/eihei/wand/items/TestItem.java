@@ -27,21 +27,11 @@ public class TestItem extends Item{
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     	Vec3 location = Pos.main(10, player);
-			double a = 0;
-			double b = 0;
-			double r = 2;
-			double fr = 3;
-			for (int i = 0;i<3;i++){
-				b = b + 0.1;
-				r = r + b;
-				fr = fr + b;
-				for (int j = 0; j < 200; j++) {
-					a = a + 0.01 * Math.PI;
-					double x = location.x + r * Math.cos(a);
-					double z = location.z + r * Math.sin(a);
-					double fx = location.x + fr * Math.cos(a);
-					double fz = location.z + fr * Math.sin(a);
-					level.addParticle(ParticleTypes.CLOUD,fx-x,location.y,fz-z,fx-x,location.y,fz-z);
+      for(int i=1;i<5;i++){
+        for(int n=0;n<360;n++){
+					double x = location.x + Math.cos(n)*i;
+          double z = location.z + Math.sin(n)*i;
+          level.addParticle(ParticleTypes.LAVA,x,location.y,z,x,location.y,z);
         }
       }
 		return InteractionResultHolder.success(player.getItemInHand(useHand));

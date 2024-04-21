@@ -1,6 +1,7 @@
 package com.eihei.wand.items;
 
 
+import com.eihei.wand.registry.ModItems;
 import com.eihei.wand.tool.Pos;
 import com.eihei.wand.utils.EntityUtil;
 
@@ -22,21 +23,18 @@ public class WandItem extends Item{
   public WandItem(Properties properties) {
     super(properties);
   }
-  /*@Override
+  @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     BlockPos location = new BlockPos(Pos.main(5, player));
     Block block = level.getBlockState(location).getBlock();
     ItemStack inHand = player.getItemInHand(useHand);
-    inHand.addTagElement("Tag", EntityUtil.newStringList("wand"));
+    ItemStack item;
     if(block.equals(Blocks.REDSTONE_BLOCK)){
-      player.give
+      player.getInventory().removeItem(inHand);
+    	item = new ItemStack(ModItems.RED_BLOCK_WAND.get());
+      player.addItem(item);
     }
     // TODO Auto-generated method stub
     return super.use(level, player, useHand);
   }
-  @Override
-  public ItemStack finishUsingItem(ItemStack p_41409_, Level p_41410_, LivingEntity p_41411_) {
-    // TODO Auto-generated method stub
-    return super.finishUsingItem(p_41409_, p_41410_, p_41411_);
-  }*/
 }
