@@ -25,7 +25,7 @@ public class BonfireWand extends Item{
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     Vec3 PlayerPos = new Vec3(player.getX(),player.getY(),player.getZ());
-    HitResult hitResult = player.pick(3, 0, false);
+    HitResult hitResult = player.pick(10, 0, false);
     Vec3 location = hitResult.getLocation();
     double X = (location.x-player.getX());
     double Y = (location.y-player.getY());
