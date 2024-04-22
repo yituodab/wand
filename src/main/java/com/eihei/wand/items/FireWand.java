@@ -17,9 +17,11 @@ import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ArrowItem;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SnowballItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -36,34 +38,17 @@ public class FireWand extends Item{
         ItemStack inHand = player.getItemInHand(InteractionHand.OFF_HAND);
         CompoundTag tag = new CompoundTag();
         tag.put("Motion", EntityUtil.newDoubleList(1.0, 0, 0));
-        Vec3 location = Pos.main(1, player);
+        Vec3 pos = Pos.main(1, player);
         if(inHand.equals(Items.ARROW)){
-            /*Arrow arrow = new Arrow(level, player.getX(), player.getY() + 1, player.getZ());
-            arrow.save(tag);
-            arrow.load(tag);
-            arrow.deserializeNBT(tag);
-            level.addFreshEntity(arrow);*/
-            Projectile _entityToSpawn = new Object() {
-				public Projectile getArrow (Level level, Entity shooter, float damage, int knockback) {
-					AbstractArrow entityToSpawn = new Arrow(EntityType.ARROW, level);
-					entityToSpawn.setOwner(shooter);
-					entityToSpawn.setBaseDamage(damage);
-					entityToSpawn.setKnockback(knockback);
-					return entityToSpawn;
-                }
-				}.getArrow (level, player,2,1);
-			_entityToSpawn.setPos(location.x,location.y,location.z);
-			_entityToSpawn.shoot(player.getLookAngle().x,player.getLookAngle().y,player.getLookAngle().z, 4, 0);
-			level.addFreshEntity(_entityToSpawn);
+            Arrow arrow = new Arrow(level,pos.x,pos.y,pos.z);
+            arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 10.0F, 0.0F);
+            level.addFreshEntity(arrow);
         }
         if(inHand.equals(Items.SNOWBALL)){
-            Snowball snow = new Snowball(level, player.getX(), player.getY(), player.getX());
-            snow.save(tag);
-            snow.load(tag);
-            snow.deserializeNBT(tag);
+            Snowball snow = new Snowball(level, pos.x, pos.y, pos.z);
+            snow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 10.0F, 0.0F);
             level.addFreshEntity(snow);
         }
         return super.use(level, player, useHand);
     }
-    public static final int MAX_STACK_SIZE = 1;
 }

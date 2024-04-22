@@ -38,35 +38,35 @@ public class ModItems {
     public static final RegistryObject<Item> OBSIDIAN_INGOT = ITEMS.register("obsidian_ingot",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> WAND = ITEMS.register("wand",
-            ()->new WandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new WandItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> COMMAND_WAND = ITEMS.register("command_wand",
-            ()->new CommandWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new CommandWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> OBSIDIAN_CONCENTRATE_INGOT_PROEMBRYO = ITEMS.register("concentrateobsidianingotproembryo",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> OBSIDIAN_CONCENTRATE_INGOT = ITEMS.register("concentrateobsidianingot",
             ()->new Item(new Item.Properties().tab(ModCreativeTabs.WAND)));
     public static final RegistryObject<Item> NETHERITE_BLOCK_WAND = ITEMS.register("netherite_block_wand",
-            ()->new NetheriteBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new NetheriteBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> MINECRAFT_ICON = ITEMS.register("minecraft_icon",
-            ()->new MinecraftIconItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new MinecraftIconItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
-            ()->new EndBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new EndBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("stone_cutter_wand",
-            ()->new StoneCutterWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new StoneCutterWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> TNT_WAND = ITEMS.register("tnt_wand",
-	    ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND)));
+	    ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> RED_BLOCK_WAND = ITEMS.register("redstone_block_wand",
-            ()->new RedBlockWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new RedBlockWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> FIRE_WAND = ITEMS.register("fire_wand",
-            ()->new FireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new FireWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> BONFIRE_WAND = ITEMS.register("bonfire_wand", 
-            ()->new BonfireWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new BonfireWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> WHITE_WOOL_WAND = ITEMS.register("white_wool_wand", 
-            ()->new SheepWoolWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new SheepWoolWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> STONE_WAND = ITEMS.register("stone_wand", 
-    	    ()->new StoneWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+    	    ()->new StoneWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> COBWEB_WAND = ITEMS.register("cobweb_wand",
-            ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND)));
+            ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> TESTITEM = ITEMS.register("test_item", 
-   	    ()->new TestItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+   	    ()->new TestItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 }

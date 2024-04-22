@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -33,7 +34,6 @@ public class LightningWand extends Item{
             //EntityType.LIGHTNING_BOLT.spawn(serverLevel, new BlockPos(location), MobSpawnType.TRIGGERED);
         return super.use(level, player, useHand);
     }
-
 
 
     public static final int MAX_STACK_SIZE = 1;
