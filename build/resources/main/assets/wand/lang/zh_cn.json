@@ -16,5 +16,7 @@
   "item.wand.stone_cutter_wand": "切石机权杖",
   "item.wand.fire_wand": "发射器权杖",
   "item.wand.tnt_wand": "TNT权杖",
-  "item.wand.cobweb_wand": "蜘蛛网权杖"
+  "item.wand.cobweb_wand": "蜘蛛网权杖",
+  "key.category.wand.wand": "权杖",
+  "key.wand.command": "命令方块权杖切换模式"
 }

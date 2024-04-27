@@ -5,7 +5,6 @@ import org.antlr.v4.codegen.model.decl.CodeBlock;
 import com.eihei.wand.entity.obsidian.ObsidianEntity;
 import com.eihei.wand.registry.ModEntityTypes;
 import com.eihei.wand.tool.Pos;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;

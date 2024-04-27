@@ -2,6 +2,7 @@ Java Launcher: /home/guest/jdk/bin/java
 Arguments: '--in-jar, /home/guest/wand/build/libs/wand-0.1.jar, --out-jar, /home/guest/wand/build/reobfJar/output.jar, --srg-in, /home/guest/wand/build/createMcpToSrg/output.tsrg, --live'
 Classpath:
  - /home/guest/.gradle/caches/forge_gradle/maven_downloader/net/md-5/SpecialSource/1.11.0/SpecialSource-1.11.0-shaded.jar
+ - /home/guest/.gradle/caches/forge_gradle/deobf_dependencies/software/bernie/geckolib/geckolib-forge-1.19/3.1.40_mapped_official_1.19.2/geckolib-forge-1.19-3.1.40_mapped_official_1.19.2.jar
  - /home/guest/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.2.0_mapped_official_1.19.2/forge-1.19.2-43.2.0_mapped_official_1.19.2.jar
  - /home/guest/.gradle/caches/forge_gradle/minecraft_repo/versions/1.19.2/client-extra.jar
  - /home/guest/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlloader/1.19.2-43.2.0/3e6e8b7b5e1dbc6ee01a20f74675f223b64c7847/fmlloader-1.19.2-43.2.0.jar
@@ -115,13 +116,13 @@ Loading mappings... 50%
 0 packages, 6859 classes, 30693 fields, 57911 methods
 Remapping final jar
 Remapping jar...  1%
-Remapping jar... 11%
-Remapping jar... 21%
+Remapping jar... 10%
+Remapping jar... 20%
 Remapping jar... 30%
 Remapping jar... 40%
 Remapping jar... 50%
-Remapping jar... 61%
-Remapping jar... 71%
+Remapping jar... 60%
+Remapping jar... 70%
 Remapping jar... 80%
 Remapping jar... 90%
 Remapping jar... 100%

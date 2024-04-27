@@ -5,9 +5,8 @@ import com.eihei.wand.registry.ModBlocks;
 import com.eihei.wand.registry.ModEntityTypes;
 import com.eihei.wand.registry.ModItems;
 import com.mojang.logging.LogUtils;
-
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,12 +24,12 @@ public class wand {
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerRenderers);
 
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModEntityTypes.ENTITY_TYPES.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
-        EntityRenderers.register(ModEntityTypes.OBSIDIAN.get(), ObsidianEntityRanderer::new);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
@@ -43,5 +42,8 @@ public class wand {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
         }
+    }
+    public void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
+        event.registerEntityRenderer(ModEntityTypes.OBSIDIAN.get(), ObsidianEntityRanderer::new);
     }
 }

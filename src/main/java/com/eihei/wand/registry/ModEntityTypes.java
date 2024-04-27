@@ -11,11 +11,14 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.EntityType.Builder;
 import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
+@Mod.EventBusSubscriber(modid = wand.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntityTypes {
   public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = 
   DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, wand.MODID);
@@ -26,5 +29,9 @@ public class ModEntityTypes {
                             .build(new ResourceLocation(wand.MODID,"obsidian").toString()));
   public static void registry(IEventBus eventBus){
     ENTITY_TYPES.register(eventBus);
+  }
+  @SubscribeEvent
+  public static void registerEntityAttributes(EntityAttributeCreationEvent event){
+    event.put(OBSIDIAN.get(), ObsidianEntity.registerAttributes().build());
   }
 }

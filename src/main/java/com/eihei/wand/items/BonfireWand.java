@@ -8,6 +8,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -67,10 +68,9 @@ public class BonfireWand extends Item{
     Entity entity = Ways.getPointedEntity(player, Line);
     if(entity != null){
       entity.hurt(DamageSource.ON_FIRE, 5);
-      entity.isOnFire();
-      if(entity instanceof Player play){
-      play.hasEffect(MobEffects.FIRE_RESISTANCE);
-    }
+      if(entity instanceof LivingEntity livingEntity){
+        livingEntity.setSecondsOnFire(5 * 20);
+      }
   }
     // TODO Auto-generated method stub
     return super.use(level, player, useHand);
