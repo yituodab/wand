@@ -52,7 +52,7 @@ public class ModItems {
             ()->new MinecraftIconItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> END_BLOCK_WAND = ITEMS.register("end_block_wand",
             ()->new EndBlockWandItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
-    public static final RegistryObject<Item> BLOCK_WAND = ITEMS.register("stone_cutter_wand",
+    public static final RegistryObject<Item> STONE_CUTTER_WAND = ITEMS.register("stone_cutter_wand",
             ()->new StoneCutterWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> TNT_WAND = ITEMS.register("tnt_wand",
 	    ()->new TNTWandItem(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
