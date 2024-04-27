@@ -5,6 +5,7 @@ import com.eihei.wand.items.CobwebWand;
 import com.eihei.wand.items.CommandWand;
 import com.eihei.wand.items.EndBlockWandItem;
 import com.eihei.wand.items.FireWand;
+import com.eihei.wand.items.LightningWand;
 import com.eihei.wand.items.MinecraftIconItem;
 import com.eihei.wand.items.NetheriteBlockWandItem;
 import com.eihei.wand.items.RedBlockWand;
@@ -67,6 +68,8 @@ public class ModItems {
     	    ()->new StoneWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> COBWEB_WAND = ITEMS.register("cobweb_wand",
             ()->new CobwebWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
+    public static final RegistryObject<Item> LIGHTNING_WAND = ITEMS.register("lightningblotrod_wand",
+            ()->new LightningWand(new Item.Properties().tab(ModCreativeTabs.WAND).stacksTo(1)));
     public static final RegistryObject<Item> TESTITEM = ITEMS.register("test_item", 
    	    ()->new TestItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 }

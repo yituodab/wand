@@ -2,7 +2,6 @@ package com.eihei.wand.items;
 
 import com.eihei.wand.tool.Ways;
 
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

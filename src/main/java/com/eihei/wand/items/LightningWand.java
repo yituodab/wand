@@ -30,8 +30,7 @@ public class LightningWand extends Item{
         ServerLevel serverLevel = (ServerLevel)level;
             HitResult hitResult = player.pick(50,0,false);
             Vec3 location = hitResult.getLocation();
-            LightningBolt Light = new LightningBolt(null, level);
-            //EntityType.LIGHTNING_BOLT.spawn(serverLevel, new BlockPos(location), MobSpawnType.TRIGGERED);
+            EntityType.LIGHTNING_BOLT.spawn(serverLevel, getDefaultInstance(), player, new BlockPos(location), MobSpawnType.COMMAND, true, true);
         return super.use(level, player, useHand);
     }
 

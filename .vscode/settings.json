@@ -4,5 +4,6 @@
     "git.ignoreLimitWarning": true,
     "files.exclude": {
         "**/.repo": true
-    }
+    },
+    "intellij-idea-keybindings.useCamelHumpsWords": false
 }

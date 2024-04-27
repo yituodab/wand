@@ -1,8 +1,12 @@
 package com.eihei.wand;
 
+import com.eihei.wand.entity.obsidian.ObsidianEntityRanderer;
 import com.eihei.wand.registry.ModBlocks;
+import com.eihei.wand.registry.ModEntityTypes;
 import com.eihei.wand.registry.ModItems;
 import com.mojang.logging.LogUtils;
+
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -24,8 +28,9 @@ public class wand {
 
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
-
+        ModEntityTypes.ENTITY_TYPES.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
+        EntityRenderers.register(ModEntityTypes.OBSIDIAN.get(), ObsidianEntityRanderer::new);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
