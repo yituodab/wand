@@ -41,7 +41,7 @@ public class CommandWand extends Item{
     super(properties);
     //TODO Auto-generated constructor stub
   }
-  private int click = ClientEvent.level;
+  public static int click = 1;
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     Vec3 PlayerPos = Pos.main(1,player);
@@ -59,10 +59,12 @@ public class CommandWand extends Item{
         level.setBlock(new BlockPos(PlayerPos), Blocks.OBSIDIAN.defaultBlockState(), 0);
       }
     }
+    if(click == 2){
     	Entity locationplayer = Ways.getPointedEntity(player, 50);
     	if(locationplayer != null){
-    	locationplayer.teleportTo(location.x,location.y,location.z);
+    	locationplayer.moveTo(location.x,location.y,location.z);
     	}
+    }
     // TODO Auto-generated method stub
     return super.use(level, player, useHand);
   }

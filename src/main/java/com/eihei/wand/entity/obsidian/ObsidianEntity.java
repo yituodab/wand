@@ -11,7 +11,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ObsidianEntity extends Mob implements IAnimatable{
 
-    //TODO Auto-generated constructor stub
+    //TODO Auto-gunenerated constructor stub
     // TODO Auto-generated method st
     // TODO Auto-generated m
   

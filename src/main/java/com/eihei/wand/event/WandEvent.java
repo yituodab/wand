@@ -16,7 +16,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.InputEvent;
 
 public class WandEvent {
-  public static int level = 1;
   @Mod.EventBusSubscriber(modid = wand.MODID,value = Dist.CLIENT)
   public static class ClientForgeEvents{
       @SubscribeEvent
@@ -26,20 +25,17 @@ public class WandEvent {
           if(player.getItemInHand(InteractionHand.MAIN_HAND).equals(ModItems.WAND)){
             ItemStack item = player.getItemInHand(InteractionHand.OFF_HAND);
             ItemStack mainitem = player.getItemInHand(InteractionHand.MAIN_HAND);
-          if(item.equals(Items.REDSTONE_BLOCK)){
-            player.getInventory().removeItem(item);
-            player.getInventory().removeItem(mainitem);
-            player.addItem(new ItemStack(ModItems.RED_BLOCK_WAND.get()));
+            int n = item.getCount();
+            ItemStack itemstack = new ItemStack(Items.AIR);
+            if(item.equals(Items.REDSTONE_BLOCK))itemstack = new ItemStack(ModItems.RED_BLOCK_WAND.get());
+            if(item.equals(Items.REDSTONE_BLOCK)||item.equals(Items.NETHERITE_BLOCK)||
+              item.equals(Items.COMMAND_BLOCK)){
+              item.setCount(n-1);
+              player.getInventory().removeItem(mainitem);
+              player.addItem(itemstack);
+            }
           }
-          if(level == 2){
-            player.sendSystemMessage(Component.literal("Control Entity"));
-          }
-          if(level == 3){
-            player.sendSystemMessage(Component.literal("Launch Block"));
-          }
-          if(level == 6)level = 1;
         }
-      }
       }
   }
 
@@ -47,7 +43,7 @@ public class WandEvent {
   public static class ClientModBusEvents {
       @SubscribeEvent
       public static void onKeyRegister(RegisterKeyMappingsEvent event){
-          event.register(Keybind.COMMAND_KEY);
+          event.register(Keybind.WAND_KEY);
       }
   }
 

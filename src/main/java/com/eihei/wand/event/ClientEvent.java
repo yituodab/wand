@@ -1,6 +1,7 @@
 package com.eihei.wand.event;
 
 import com.eihei.wand.wand;
+import com.eihei.wand.items.CommandWand;
 import com.eihei.wand.registry.ModItems;
 import com.eihei.wand.utils.Keybind;
 import net.minecraft.client.Minecraft;
@@ -14,13 +15,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.InputEvent;
 
 public class ClientEvent {
-  public static int level = 1;
   @Mod.EventBusSubscriber(modid = wand.MODID,value = Dist.CLIENT)
   public static class ClientForgeEvents{
       @SubscribeEvent
       public static void onKeyInput(InputEvent.Key event){
           if(Keybind.COMMAND_KEY.consumeClick()){
-          level = level + 1;
+          CommandWand.click = CommandWand.click + 1;
+          int level = CommandWand.click;
           Player player = Minecraft.getInstance().player;
           if(player.getItemInHand(InteractionHand.MAIN_HAND).equals(ModItems.COMMAND_WAND)){
           if(level == 1){
