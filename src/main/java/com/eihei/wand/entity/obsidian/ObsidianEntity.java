@@ -11,15 +11,13 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ObsidianEntity extends Mob implements IAnimatable{
 
-    //TODO Auto-gunenerated constructor stub
-    // TODO Auto-generated method st
-    // TODO Auto-generated m
-  
-
-public ObsidianEntity(EntityType<? extends Mob> p_21368_, Level p_21369_) {
+    public ObsidianEntity(EntityType<? extends Mob> p_21368_, Level p_21369_) {
     super(p_21368_, p_21369_);
     //TODO Auto-generated constructor stub
   }
+
+  @SuppressWarnings("unused")
+  private AnimationFactory factory = new AnimationFactory(this);
 
 
 @Override
@@ -44,7 +42,7 @@ public static AttributeSupplier.Builder registerAttributes() {
 @Override
 public AnimationFactory getFactory() {
   // TODO Auto-generated method stub
-  return null;
+  return factory;
 }
 
 
