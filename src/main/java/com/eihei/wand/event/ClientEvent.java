@@ -20,20 +20,23 @@ public class ClientEvent {
       @SubscribeEvent
       public static void onKeyInput(InputEvent.Key event){
           if(Keybind.COMMAND_KEY.consumeClick()){
-          CommandWand.click = CommandWand.click + 1;
-          int level = CommandWand.click;
           Player player = Minecraft.getInstance().player;
           if(player.getItemInHand(InteractionHand.MAIN_HAND).equals(ModItems.COMMAND_WAND)){
+            CommandWand.click = CommandWand.click + 1;
+            int level = CommandWand.click;
           if(level == 1){
             player.sendSystemMessage(Component.literal("Obsidian Line"));
+            System.out.println("level = 1");
           }
           if(level == 2){
             player.sendSystemMessage(Component.literal("Control Entity"));
+            System.out.println("level = 2");
           }
           if(level == 3){
             player.sendSystemMessage(Component.literal("Launch Block"));
+            System.out.println("level = 3");
           }
-          if(level == 6)level = 1;
+            if(level == 6){CommandWand.click = 1;System.out.print("level = 1");}
         }
       }
       }

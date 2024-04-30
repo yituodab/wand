@@ -15,7 +15,7 @@ public class ObsidianModel extends AnimatedGeoModel<ObsidianEntity>{
   @Override
   public ResourceLocation getModelResource(ObsidianEntity object) {
     // TODO Auto-generated method stub
-    return new ResourceLocation(wand.MODID,"geo/obsidian.geo.json");
+    return new ResourceLocation(wand.MODID,"geo/block.geo.json");
   }
 
   @Override

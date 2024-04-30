@@ -2,6 +2,9 @@ package com.eihei.wand.items;
 
 import org.antlr.v4.parse.ANTLRParser.labeledAlt_return;
 
+import com.eihei.wand.entity.obsidian.ObsidianEntity;
+import com.eihei.wand.registry.ModEntityTypes;
+
 import net.minecraft.advancements.critereon.LightningStrikeTrigger;
 import net.minecraft.commands.arguments.coordinates.Vec3Argument;
 import net.minecraft.core.BlockPos;
@@ -27,10 +30,11 @@ public class LightningWand extends Item{
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
-        ServerLevel serverLevel = (ServerLevel)level;
-            HitResult hitResult = player.pick(50,0,false);
-            Vec3 location = hitResult.getLocation();
-            EntityType.LIGHTNING_BOLT.spawn(serverLevel, getDefaultInstance(), player, new BlockPos(location), MobSpawnType.COMMAND, true, true);
+        HitResult hitResult = player.pick(50,0,false);
+        Vec3 location = hitResult.getLocation();
+        LightningBolt light = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+        light.setPos(location);
+        level.addFreshEntity(light);
         return super.use(level, player, useHand);
     }
 

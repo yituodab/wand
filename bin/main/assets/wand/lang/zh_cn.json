@@ -18,5 +18,6 @@
   "item.wand.tnt_wand": "TNT权杖",
   "item.wand.cobweb_wand": "蜘蛛网权杖",
   "key.category.wand.wand": "权杖",
-  "key.wand.command": "命令方块权杖切换模式"
+  "key.wand.command": "命令方块权杖切换模式",
+  "key.wand.wand": "权杖装载/卸载方块"
 }
