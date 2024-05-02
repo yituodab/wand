@@ -1,0 +1,9 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "git.ignoreLimitWarning": true,
+    "files.exclude": {
+        "**/.repo": true
+    },
+    "intellij-idea-keybindings.useCamelHumpsWords": false
+}
