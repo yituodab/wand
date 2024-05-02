@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 import org.openjdk.nashorn.internal.runtime.regexp.joni.constants.CCSTATE;
 import com.eihei.wand.wand;
 import com.eihei.wand.entity.bedrock.BedrockEntity;
+import com.eihei.wand.entity.obsidian.ObsidianArrow;
 import com.eihei.wand.entity.obsidian.ObsidianEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.EntityType.Builder;
 import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.level.entity.EntityAccess;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -33,6 +35,11 @@ public class ModEntityTypes {
       () -> EntityType.Builder.of(BedrockEntity::new, MobCategory.MISC)
           .sized(1f, 1f) // 生成的大小width height
           .build(new ResourceLocation(wand.MODID, "bedrock").toString()));
+
+  public static final RegistryObject<EntityType<ObsidianArrow>> OBSIARROW = ENTITY_TYPES.register("obsiarrow", 
+      () -> EntityType.Builder.of(ObsidianArrow::new, MobCategory.MISC)
+          .sized(1f, 1f)
+          .build(new ResourceLocation(wand.MODID, "obsiarrow").toString()));
 
   public static void registry(IEventBus eventBus) {
     ENTITY_TYPES.register(eventBus);

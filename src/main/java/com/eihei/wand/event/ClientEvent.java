@@ -21,7 +21,7 @@ public class ClientEvent {
       public static void onKeyInput(InputEvent.Key event){
           if(Keybind.COMMAND_KEY.consumeClick()){
           Player player = Minecraft.getInstance().player;
-          if(player.getItemInHand(InteractionHand.MAIN_HAND).equals(ModItems.COMMAND_WAND)){
+          if(player.getItemInHand(InteractionHand.MAIN_HAND).equals(ModItems.COMMAND_WAND.get())){
             CommandWand.click = CommandWand.click + 1;
             int level = CommandWand.click;
           if(level == 1){

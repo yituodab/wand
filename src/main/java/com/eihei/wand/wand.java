@@ -2,6 +2,7 @@ package com.eihei.wand;
 
 import com.eihei.wand.entity.bedrock.BedrockEntityModel;
 import com.eihei.wand.entity.bedrock.BedrockEntityRanderer;
+import com.eihei.wand.entity.obsidian.ObsidianArrowRanderer;
 import com.eihei.wand.entity.obsidian.ObsidianEntityRanderer;
 import com.eihei.wand.registry.ModBlocks;
 import com.eihei.wand.registry.ModEntityTypes;
@@ -48,5 +49,6 @@ public class wand {
     public void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(ModEntityTypes.OBSIDIAN.get(), ObsidianEntityRanderer::new);
         event.registerEntityRenderer(ModEntityTypes.BEDROCK.get(), BedrockEntityRanderer::new);
+        event.registerEntityRenderer(ModEntityTypes.OBSIARROW.get(), ObsidianArrowRanderer::new);
     }
 }

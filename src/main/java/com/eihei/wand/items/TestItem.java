@@ -31,6 +31,11 @@ public class TestItem extends Item{
   @Override
   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand useHand) {
     	Vec3 location = Pos.main(1, player);
+      Vec3 locationTen = Pos.main(10, player);
+      double line = location.distanceTo(locationTen);
+      double x = (location.x - locationTen.x)/line;
+      double y = (location.y - locationTen.y)/line;
+      double z = (location.z - locationTen.z)/line;
       /*for(int i=1;i<5;i++){
         for(int j=0;j<360;j++){
           double n = Math.toRadians(j);
@@ -39,7 +44,9 @@ public class TestItem extends Item{
           level.addParticle(ParticleTypes.LAVA,x,location.y,z,x,location.y,z);
         }
       }*/
-      ModEntityTypes.OBSIDIAN.get().spawn((ServerLevel)level, getDefaultInstance(), player, new BlockPos(location), MobSpawnType.COMMAND, false, true);
+      ObsidianEntity obsidian = new ObsidianEntity(ModEntityTypes.OBSIDIAN.get(), level);
+      obsidian.setPos(location);
+      obsidian.travel(new Vec3(x, y, z));
       //level.addFreshEntity(obsidian);
 		return InteractionResultHolder.success(player.getItemInHand(useHand));
   }
