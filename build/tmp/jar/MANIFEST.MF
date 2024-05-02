@@ -5,5 +5,9 @@ Specification-Version: 1
 Implementation-Title: wand
 Implementation-Version: 0.1
 Implementation-Vendor: examplemodsareus
+<<<<<<< HEAD
+Implementation-Timestamp: 2024-02-27T05:12:30+0000
+=======
 Implementation-Timestamp: 2024-05-02T12:13:20+0800
+>>>>>>> main
 
