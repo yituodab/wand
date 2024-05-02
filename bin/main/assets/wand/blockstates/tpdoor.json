@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "wand:blocks/tpdoor"
+      }
+    }
+  ]
+}
