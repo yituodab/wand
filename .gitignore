@@ -5,3 +5,4 @@ wand
 assets
 data
 .github/*
+build.gradle
