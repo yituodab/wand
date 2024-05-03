@@ -5,11 +5,8 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
-<<<<<<<< HEAD:.github/workflows/1.18.2-gradle.yml
+
 name: 1.18.2 Mcmod Gradle Build
-========
-name: 1.19.2 Mcmod Gradle Build
->>>>>>>> main:.github/workflows/1.19.2-gradle.yml
 
 on:
   push:
@@ -47,11 +44,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-<<<<<<<< HEAD:.github/workflows/1.18.2-gradle.yml
         name: 1.18.2-wand-jar
-========
-        name: 1.19.2-wand-jar
->>>>>>>> main:.github/workflows/1.19.2-gradle.yml
         path: build/libs/*.jar
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
